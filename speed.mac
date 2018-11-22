@@ -1,0 +1,18 @@
+/vis/disable
+/run/verbose 0
+/control/verbose 0
+/tracking/verbose 0
+/event/verbose 0
+/process/verbose 0
+/particle/verbose 0
+/cuts/verbose 0
+/LXe/eventVerbose 0
+/vis/verbose 0
+
+/run/initialize
+/material/verbose 0
+/hits/verbose 0
+/heptst/reportLevel 0
+
+/gun/position 0.0, 10.0, 12.0 cm
+/run/beamOn 1000

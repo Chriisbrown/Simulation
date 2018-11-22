@@ -1,0 +1,18 @@
+Paramaters updated - (03/10/2018)
+LXeDetectorConstruction
+Added the fscint1 material instance with the correct density and H-C ratio
+
+- all new scintillator added which has a consistent scintillation yield across energies. Also updated absorption length to 380cm and yield to 10,000 MeV as seen in some guide to scintillators online. Also Fast time constant - 0.9ns and Slow time constant 2.1ns
+Refractive index - 1.58
+Birks Constant - 0.126mm/MeV (needs looking into)
+
+LXeMainVolume
+Commented out two of the PMTs on the two faces unused
+
+LXePrimaryGeneratorAction
+particle position is now 10cm above
+particle momentum is now 4GeV
+
+LXeRunAction
+PMT Histogram now go up to 1000
+Energy Histogram now goes between 4 - 10MeV
