@@ -59,9 +59,9 @@ void LXeRunAction::BeginOfRunAction(const G4Run* aRun){
   G4AnalysisManager* man = G4AnalysisManager::Instance();
 
   G4String s = G4UIcommand::ConvertToString(fRootName);
-  man->OpenFile(s);
+  man->OpenFile("data.root");
 
-  man->CreateNtuple("LXe","PMTs");
+  man->CreateNtuple(s,"PMTs");
   man->CreateNtupleDColumn("PMT0");
   man->CreateNtupleDColumn("PMT1");
   man->CreateNtupleDColumn("PMT3");
