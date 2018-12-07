@@ -444,18 +444,26 @@ void LXeDetectorConstruction::SetDefaults() {
 
   //Resets to default values
   //fD_mtl=0.0635*cm;
+<<<<<<< HEAD
   fD_mtl = 0.0635*cm;
 
   //fD_mtl= 0.5*cm;
   fScint_x = 20.0*cm;
   fScint_y = 1*cm;
+=======
+  fD_mtl = 1.0*cm;
+
+  //fD_mtl= 0.5*cm;
+  fScint_x = 20.0*cm;
+  fScint_y = 1.0*cm;
+>>>>>>> ac76c42486bd6a3922bb7e3b5a18b48ac5755d23
   fScint_z = 20.0*cm;
 
   fNx = 1;
   fNy = 1;
   fNz = 1;
 
-  fOuterRadius_pmt = 0.25*cm;
+  fOuterRadius_pmt = 0.5*cm;
 
   fSphereOn = false;
   fRefl=1.0;
