@@ -50,7 +50,7 @@ SetGuidance("Set the photon count threshold for saving the random number seed");
   fVerboseCmd = new G4UIcmdWithAnInteger("/LXe/eventVerbose",this);
   fVerboseCmd->SetGuidance("Set the verbosity of event data.");
   fVerboseCmd->SetParameterName("verbose",true);
-  fVerboseCmd->SetDefaultValue(1);
+  fVerboseCmd->SetDefaultValue(0);
 
   fPmtThresholdCmd = new G4UIcmdWithAnInteger("/LXe/pmtThreshold",this);
   fPmtThresholdCmd->SetGuidance("Set the pmtThreshold (in # of photons)");

@@ -71,12 +71,7 @@ int main(int argc, char** argv)
 
   runManager->SetUserInitialization(new LXeActionInitialization(recorder));
 
-#ifdef G4VIS_USE
-  G4VisManager* visManager = new G4VisExecutive;
-  // G4VisExecutive can take a verbosity argument - see /vis/verbose guidance.
-  // G4VisManager* visManager = new G4VisExecutive("Quiet");
-  visManager->Initialize();
-#endif
+
 
   // runManager->Initialize();
   // int numberOfEvent = 10;
@@ -87,13 +82,7 @@ int main(int argc, char** argv)
   if(argc==1){
 #ifdef G4UI_USE
     G4UIExecutive* ui = new G4UIExecutive(argc, argv);
-// #ifdef G4VIS_USE
-//     UImanager->ApplyCommand("/control/execute vis.mac");
-// #endif
-    if (ui->IsGUI())
-       UImanager->ApplyCommand("/control/execute gui.mac");
-    ui->SessionStart();
-    delete ui;
+
 #endif
   }
   else{
@@ -104,9 +93,6 @@ int main(int argc, char** argv)
 
  if(recorder)delete recorder;
 
-#ifdef G4VIS_USE
-  delete visManager;
-#endif
 
   // job termination
   delete runManager;
