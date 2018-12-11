@@ -76,7 +76,7 @@ LXeMainVolume::LXeMainVolume(G4RotationMatrix *pRot,
   fHousing_box = new G4Box("housing_box",housing_x/2.,housing_y/2.,housing_z/2.);
 
 
-  fScint_log = new G4LogicalVolume(subtract4,G4Material::GetMaterial("Scintillator1"),
+  fScint_log = new G4LogicalVolume(bigbox,G4Material::GetMaterial("Scintillator1"),
                                    "scint_log",0,0,0);
   fHousing_log = new G4LogicalVolume(fHousing_box,
                                      G4Material::GetMaterial("Al"),
@@ -154,27 +154,27 @@ LXeMainVolume::LXeMainVolume(G4RotationMatrix *pRot,
 
   G4int k=0;
 
-  // //front
-  G4RotationMatrix* rm_z2 = new G4RotationMatrix();
-  rm_z2->rotateY(45*deg);
-  z = -fScint_z/2 + std::pow(2, 0.5)*fScint_y/4 - std::pow(2, 0.5)*height_pmt/2;
-  PlacePMTs(fPmt_log,rm_z2,x,y,dx,dy,xmin2,ymin,fNx,fNy,x,y,z,k);
+  // // //front
+  // G4RotationMatrix* rm_z2 = new G4RotationMatrix();
+  // rm_z2->rotateY(45*deg);
+  // z = -fScint_z/2 + std::pow(2, 0.5)*fScint_y/4 - std::pow(2, 0.5)*height_pmt/2;
+  // PlacePMTs(fPmt_log,rm_z2,x,y,dx,dy,xmin2,ymin,fNx,fNy,x,y,z,k);
 
-  // // // //
-  G4RotationMatrix* rm_z = new G4RotationMatrix();
-  rm_z->rotateY(225*deg);
-  z = fScint_z/2 - std::pow(2, 0.5)*fScint_y/4 + std::pow(2, 0.5)*height_pmt/2;      //back
-  PlacePMTs(fPmt_log,rm_z,x,y,dx,dy,xmin,ymin,fNx,fNy,x,y,z,k);
-  // // // //
-  G4RotationMatrix* rm_y1 = new G4RotationMatrix();
-  rm_y1->rotateY(135*deg);
-  x = fScint_x/2 - std::pow(2, 0.5)*fScint_y/4 + std::pow(2, 0.5)*height_pmt/2;     //left
-  PlacePMTs(fPmt_log,rm_y1,y,z,dy,dz,ymin,zmin,fNy,fNz,x,y,z,k);
+  // // // // //
+  // G4RotationMatrix* rm_z = new G4RotationMatrix();
+  // rm_z->rotateY(225*deg);
+  // z = fScint_z/2 - std::pow(2, 0.5)*fScint_y/4 + std::pow(2, 0.5)*height_pmt/2;      //back
+  // PlacePMTs(fPmt_log,rm_z,x,y,dx,dy,xmin,ymin,fNx,fNy,x,y,z,k);
+  // // // // //
+  // G4RotationMatrix* rm_y1 = new G4RotationMatrix();
+  // rm_y1->rotateY(135*deg);
+  // x = fScint_x/2 - std::pow(2, 0.5)*fScint_y/4 + std::pow(2, 0.5)*height_pmt/2;     //left
+  // PlacePMTs(fPmt_log,rm_y1,y,z,dy,dz,ymin,zmin,fNy,fNz,x,y,z,k);
   
-  G4RotationMatrix* rm_y2 = new G4RotationMatrix();
-  rm_y2->rotateY(315*deg);
-  x = -fScint_x/2 + std::pow(2, 0.5)*fScint_y/4 - std::pow(2, 0.5)*height_pmt/2;   //right
-  PlacePMTs(fPmt_log,rm_y2,y,z,dy,dz,ymin,zmin2,fNy,fNz,x,y,z,k);
+  // G4RotationMatrix* rm_y2 = new G4RotationMatrix();
+  // rm_y2->rotateY(315*deg);
+  // x = -fScint_x/2 + std::pow(2, 0.5)*fScint_y/4 - std::pow(2, 0.5)*height_pmt/2;   //right
+  // PlacePMTs(fPmt_log,rm_y2,y,z,dy,dz,ymin,zmin2,fNy,fNz,x,y,z,k);
 
 
 
@@ -188,17 +188,17 @@ LXeMainVolume::LXeMainVolume(G4RotationMatrix *pRot,
   zs = fScint_z/2. + height_pmt;       //back
   PlacePMTs(fPmt_log,rm_zside,xs,ys,dxs,dys,xminside,yminside,fNx,fNy,xs,ys,zs,k);
 
-  // //
-  G4RotationMatrix* rm_y1side = new G4RotationMatrix();
-  rm_y1side->rotateY(-90*deg);
-  xs = -fScint_x/2. - height_pmt;      //left
-  PlacePMTs(fPmt_log,rm_y1side,ys,zs,dys,dzs,yminside,zminside,fNy,fNz,xs,ys,zs,k);
+  // // //
+  // G4RotationMatrix* rm_y1side = new G4RotationMatrix();
+  // rm_y1side->rotateY(-90*deg);
+  // xs = -fScint_x/2. - height_pmt;      //left
+  // PlacePMTs(fPmt_log,rm_y1side,ys,zs,dys,dzs,yminside,zminside,fNy,fNz,xs,ys,zs,k);
 
-  //
-  G4RotationMatrix* rm_y2side = new G4RotationMatrix();
-  rm_y2side->rotateY(90*deg);
-  xs = fScint_x/2. + height_pmt;      //right
-  PlacePMTs(fPmt_log,rm_y2side,ys,zs,dys,dzs,yminside,zminside,fNy,fNz,xs,ys,zs,k);
+  // //
+  // G4RotationMatrix* rm_y2side = new G4RotationMatrix();
+  // rm_y2side->rotateY(90*deg);
+  // xs = fScint_x/2. + height_pmt;      //right
+  // PlacePMTs(fPmt_log,rm_y2side,ys,zs,dys,dzs,yminside,zminside,fNy,fNz,xs,ys,zs,k);
 
 
   VisAttributes();

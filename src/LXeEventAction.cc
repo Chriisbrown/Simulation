@@ -94,7 +94,7 @@ void LXeEventAction::EndOfEventAction(const G4Event* anEvent){
   if (evt) eID = evt->GetEventID();
 
   G4AnalysisManager* man = G4AnalysisManager::Instance();
-  man->FillNtupleDColumn(10,eID);
+  man->FillNtupleDColumn(4,eID);
 
 
   G4cout << "Event ID: " << eID << G4endl;
@@ -171,11 +171,11 @@ void LXeEventAction::EndOfEventAction(const G4Event* anEvent){
            << eventInformation->GetEDep() / keV << " (keV)" << G4endl;
     }
 
-  man->FillNtupleDColumn(9,(eventInformation->GetEDep()));
+  man->FillNtupleDColumn(3,(eventInformation->GetEDep()));
   }
 
 
-  G4int pmtshits[8];
+
 
 
   if(pmtHC){
@@ -188,7 +188,6 @@ void LXeEventAction::EndOfEventAction(const G4Event* anEvent){
         G4cout << "\tPMT " << (*pmtHC)[i]->GetPMTNumber() << ": "
              << (*pmtHC)[i]->GetPhotonCount() << G4endl;
       }
-      pmtshits [(*pmtHC)[i]->GetPMTNumber()] = (*pmtHC)[i]->GetPhotonCount();
       man->FillNtupleDColumn((*pmtHC)[i]->GetPMTNumber(),((*pmtHC)[i]->GetPhotonCount()));
       reconPos+=(*pmtHC)[i]->GetPMTPos()*(*pmtHC)[i]->GetPhotonCount();
       if((*pmtHC)[i]->GetPhotonCount()>=fPMTThreshold){
@@ -198,12 +197,7 @@ void LXeEventAction::EndOfEventAction(const G4Event* anEvent){
         (*pmtHC)[i]->SetDrawit(false);
       }
     }
-    G4float ans = (G4float)pmtshits [0] / (G4float)pmtshits [1];
-    G4float ans2 = (G4float)pmtshits [2] / (G4float)pmtshits [3];
-    if(fVerbose>0){
-      G4cout << "\tRatio 1:2: " << ans << G4endl;
-      G4cout << "\tRatio 3:4: " << ans2 << G4endl;
-    }
+
 
 
 
@@ -217,8 +211,8 @@ void LXeEventAction::EndOfEventAction(const G4Event* anEvent){
     }
     pmtHC->DrawAllHits();
   }
-  man->FillNtupleDColumn(8,(eventInformation->GetHitCount()));
-  man->FillNtupleDColumn(11,(eventInformation->GetPhotonCount_Scint()));
+  man->FillNtupleDColumn(2,(eventInformation->GetHitCount()));
+  man->FillNtupleDColumn(5,(eventInformation->GetPhotonCount_Scint()));
   man->AddNtupleRow();
   if(fVerbose>0){
     //End of event output. later to be controlled by a verbose level

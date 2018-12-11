@@ -64,12 +64,12 @@ void LXeRunAction::BeginOfRunAction(const G4Run* aRun){
   man->CreateNtuple(s,"PMTs");
   man->CreateNtupleDColumn("PMT0");
   man->CreateNtupleDColumn("PMT1");
-  man->CreateNtupleDColumn("PMT3");
-  man->CreateNtupleDColumn("PMT4");
-  man->CreateNtupleDColumn("PMT5");
-  man->CreateNtupleDColumn("PMT6");
-  man->CreateNtupleDColumn("PMT7");
-  man->CreateNtupleDColumn("PMT8");
+  //man->CreateNtupleDColumn("PMT3");
+  //man->CreateNtupleDColumn("PMT4");
+  //man->CreateNtupleDColumn("PMT5");
+  //man->CreateNtupleDColumn("PMT6");
+  //man->CreateNtupleDColumn("PMT7");
+  //man->CreateNtupleDColumn("PMT8");
   man->CreateNtupleDColumn("PMTTotal");
   man->CreateNtupleDColumn("EnergyDep");
   man->CreateNtupleDColumn("EventID");
