@@ -444,10 +444,6 @@ void LXeDetectorConstruction::SetDefaults() {
 
   //Resets to default values
   fD_mtl = 0.0635*cm;
-<<<<<<< HEAD
-=======
-
->>>>>>> b9e7ecc4d83876039074ccbdab6f64df3d700dd5
 
   fScint_x = 5.0*cm;
   fScint_y = 1*cm;
