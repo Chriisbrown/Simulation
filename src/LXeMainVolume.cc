@@ -100,47 +100,43 @@ LXeMainVolume::LXeMainVolume(G4RotationMatrix *pRot,
   G4double startAngle_pmt = 0.*deg;
   G4double spanningAngle_pmt = 360.*deg;
 
-  // fPmt = new G4Tubs("pmt_tube",innerRadius_pmt,fOuterRadius_pmt,
-  //                   height_pmt,startAngle_pmt,spanningAngle_pmt);
-  fPmt = new G4Box("pmt_tube",0.2*cm,0.2*cm,height_pmt);
-  fPhotocath = new G4Box("photocath_tube",0.2*cm,0.2*cm,height_pmt/2);
+  fPmt = new G4Tubs("pmt_tube",innerRadius_pmt,fOuterRadius_pmt,
+                     height_pmt,startAngle_pmt,spanningAngle_pmt);
+  //fPmt = new G4Box("pmt_tube",0.2*cm,0.2*cm,height_pmt);
+  //fPhotocath = new G4Box("photocath_tube",0.2*cm,0.2*cm,height_pmt/2);
+
+
   //the "photocathode" is a metal slab at the back of the glass that
   //is only a very rough approximation of the real thing since it only
   //absorbs or detects the photons based on the efficiency set below
-  // fPhotocath = new G4Tubs("photocath_tube",innerRadius_pmt,fOuterRadius_pmt,
-  //                         height_pmt/2,startAngle_pmt,spanningAngle_pmt);
+  fPhotocath = new G4Tubs("photocath_tube",innerRadius_pmt,fOuterRadius_pmt,
+                           height_pmt/2,startAngle_pmt,spanningAngle_pmt);
 
   fPmt_log = new G4LogicalVolume(fPmt,G4Material::GetMaterial("Glass"),
                                  "pmt_log");
-  // fSiPm_log = new G4LogicalVolume(fSiPm ,G4Material::GetMaterial("Glass"),
-  //                                "SiPm_log");
+
   fPhotocath_log = new G4LogicalVolume(fPhotocath,
                                        G4Material::GetMaterial("Al"),
                                        "photocath_log");
-  // fSiPmdetector_log  = new G4LogicalVolume(fSiPmdetector,
-  //                                      G4Material::GetMaterial("Al"),
-  //                                      "SiPmdetector_log");                                    
+                                   
 
   new G4PVPlacement(0,G4ThreeVector(0,0,-height_pmt/2),
                                     fPhotocath_log,"photocath",
                                     fPmt_log,false,0);
 
-  // new G4PVPlacement(0,G4ThreeVector(0,0,-height_pmt/2),
-  //                                   fSiPmdetector_log,"SIPM",
-  //                                   fSiPm_log,false,0);
 
   //***********Arrange pmts around the outside of housing**********
 
-  G4double dx = 0;
-  G4double dy = 0.;
-  G4double dz = 0;
+  //G4double dx = 0;
+  //G4double dy = 0.;
+  //G4double dz = 0;
 
-  G4double x,y,z;
-  G4double xmin = -fScint_x/2 + std::pow(2, 0.5)*fScint_y/4  - std::pow(2, 0.5)*height_pmt/2;
-  G4double xmin2 = fScint_x/2 - std::pow(2, 0.5)*fScint_y/4  + std::pow(2, 0.5)*height_pmt/2;
-  G4double ymin = 0;
-  G4double zmin = fScint_z/2 - std::pow(2, 0.5)*fScint_y/4 + std::pow(2, 0.5)*height_pmt/2;
-  G4double zmin2 = -fScint_z/2 + std::pow(2, 0.5)*fScint_y/4 - std::pow(2, 0.5)*height_pmt/2;
+  //G4double x,y,z;
+  //G4double xmin = -fScint_x/2 + std::pow(2, 0.5)*fScint_y/4  - std::pow(2, 0.5)*height_pmt/2;
+  //G4double xmin2 = fScint_x/2 - std::pow(2, 0.5)*fScint_y/4  + std::pow(2, 0.5)*height_pmt/2;
+  //G4double ymin = 0;
+ // G4double zmin = fScint_z/2 - std::pow(2, 0.5)*fScint_y/4 + std::pow(2, 0.5)*height_pmt/2;
+  //G4double zmin2 = -fScint_z/2 + std::pow(2, 0.5)*fScint_y/4 - std::pow(2, 0.5)*height_pmt/2;
 
 
   G4double dxs = fScint_x/fNx;

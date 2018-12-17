@@ -88,8 +88,8 @@ class LXeMainVolume : public G4PVPlacement
     //
     G4Box* fScint_box;
     G4Box* fHousing_box;
-    G4Box* fPmt;
-    G4Box* fPhotocath;
+    G4Tubs* fPmt;
+    G4Tubs* fPhotocath;
     G4Sphere* fSphere;
 
     // Logical volumes

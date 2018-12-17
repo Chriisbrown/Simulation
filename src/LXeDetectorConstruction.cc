@@ -443,25 +443,17 @@ void LXeDetectorConstruction::SetPMTRadius(G4double outerRadius_pmt) {
 void LXeDetectorConstruction::SetDefaults() {
 
   //Resets to default values
-  //fD_mtl=0.0635*cm;
   fD_mtl = 0.0635*cm;
-<<<<<<< HEAD
 
-  //fD_mtl= 0.5*cm;
   fScint_x = 5.0*cm;
   fScint_y = 1*cm;
   fScint_z = 50.0*cm;
-=======
-  fScint_x = 20.0*cm;
-  fScint_y = 1.0*cm;
-  fScint_z = 20.0*cm;
->>>>>>> 06d3cf087ac464cac494965787bf6c4f5e024534
 
   fNx = 1;
   fNy = 1;
   fNz = 1;
 
-  fOuterRadius_pmt = 0.5*cm;
+  fOuterRadius_pmt = std::pow(1.273239545, 0.5);
 
   fSphereOn = false;
   fRefl=1.0;
