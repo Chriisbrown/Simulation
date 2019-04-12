@@ -59,7 +59,7 @@ LXeMainVolume::LXeMainVolume(G4RotationMatrix *pRot,
   CopyValues();
 
   G4double housing_x=fScint_x+2.*fD_mtl;
-  G4double housing_y=fScint_y+2.*0.0635;
+  G4double housing_y=fScint_y+2.*fD_mtl;
   G4double housing_z=fScint_z+2.*fD_mtl;
 
   //*************************** housing and scintillator
@@ -278,7 +278,7 @@ void LXeMainVolume::SurfaceProperties(){
 
   //**Scintillator housing properties
   //G4double reflectivity[] = {fRefl, fRefl};
-  G4double reflectivity[] = {1.0, 1.0};
+  G4double reflectivity[] = {0.5, 0.5};
   assert(sizeof(reflectivity) == sizeof(ephoton));
   G4double efficiency[] = {0.0, 0.0};
   assert(sizeof(efficiency) == sizeof(ephoton));
@@ -302,7 +302,7 @@ void LXeMainVolume::SurfaceProperties(){
   OpSphereSurface->SetMaterialPropertiesTable(spherePT);
 
   //**Photocathode surface properties
-  G4double photocath_EFF[]={1.0, 1.0}; //Enables 'detection' of photons
+  G4double photocath_EFF[]={0.9, 0.9}; //Enables 'detection' of photons
   assert(sizeof(photocath_EFF) == sizeof(ephoton));
   G4double photocath_ReR[]={1.92,1.92};
   assert(sizeof(photocath_ReR) == sizeof(ephoton));

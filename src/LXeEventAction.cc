@@ -74,8 +74,6 @@ void LXeEventAction::BeginOfEventAction(const G4Event* anEvent){
     GetEventManager()->SetUserInformation(new LXeUserEventInformation);
 
   G4SDManager* SDman = G4SDManager::GetSDMpointer();
-  if(fScintCollID<0)
-    fScintCollID=SDman->GetCollectionID("scintCollection");
   if(fPMTCollID<0)
     fPMTCollID=SDman->GetCollectionID("pmtHitCollection");
 
@@ -94,155 +92,33 @@ void LXeEventAction::EndOfEventAction(const G4Event* anEvent){
   if (evt) eID = evt->GetEventID();
 
   G4AnalysisManager* man = G4AnalysisManager::Instance();
-  man->FillNtupleDColumn(10,eID);
-
+  
 
   G4cout << "Event ID: " << eID << G4endl;
 
-  G4TrajectoryContainer* trajectoryContainer=anEvent->GetTrajectoryContainer();
 
-  G4int n_trajectories = 0;
-  if (trajectoryContainer) n_trajectories = trajectoryContainer->entries();
-
-  // extract the trajectories and draw them
-  if (G4VVisManager::GetConcreteInstance()){
-    for (G4int i=0; i<n_trajectories; i++){
-      LXeTrajectory* trj = (LXeTrajectory*)
-        ((*(anEvent->GetTrajectoryContainer()))[i]);
-      if(trj->GetParticleName()=="opticalphoton"){
-        trj->SetForceDrawTrajectory(fForcedrawphotons);
-        trj->SetForceNoDrawTrajectory(fForcenophotons);
-      }
-      trj->DrawTrajectory();
-    }
-  }
-
-  LXeScintHitsCollection* scintHC = 0;
   LXePMTHitsCollection* pmtHC = 0;
   G4HCofThisEvent* hitsCE = anEvent->GetHCofThisEvent();
 
   //Get the hit collections
   if(hitsCE){
-    if(fScintCollID>=0)scintHC = (LXeScintHitsCollection*)(hitsCE->GetHC(fScintCollID));
     if(fPMTCollID>=0)pmtHC = (LXePMTHitsCollection*)(hitsCE->GetHC(fPMTCollID));
   }
 
   //Hits in scintillator
-  if(scintHC){
-    int n_hit = scintHC->entries();
-    G4ThreeVector  eWeightPos(0.);
-    G4double edep;
-    G4double edepMax=0;
-
-    for(int i=0;i<n_hit;i++){ //gather info on hits in scintillator
-      edep=(*scintHC)[i]->GetEdep();
-      eventInformation->IncEDep(edep); //sum up the edep
-      eWeightPos += (*scintHC)[i]->GetPos()*edep;//calculate energy weighted pos
-      if(edep>edepMax){
-        edepMax=edep;//store max energy deposit
-        G4ThreeVector posMax=(*scintHC)[i]->GetPos();
-        eventInformation->SetPosMax(posMax,edep);
-      }
-    }
-
-
-
-    if(eventInformation->GetEDep()==0.){
-      G4int pmts=pmtHC->entries();
-      for(G4int i=0;i<pmts;i++){
-        //man->FillH1(i,0.);
-        man->FillNtupleDColumn(i,0.);
-      }
-      man->AddNtupleRow();
-
-      if(fVerbose>0)G4cout<<"No hits in the scintillator this event."<<G4endl;
-    }
-    else{
-      //Finish calculation of energy weighted position
-      eWeightPos/=eventInformation->GetEDep();
-      eventInformation->SetEWeightPos(eWeightPos);
-      if(fVerbose>0){
-        G4cout << "\tEnergy weighted position of hits in LXe : "
-               << eWeightPos/mm << G4endl;
-      }
-    }
-    if(fVerbose>0){
-    G4cout << "\tTotal energy deposition in scintillator : "
-           << eventInformation->GetEDep() / keV << " (keV)" << G4endl;
-    }
-
-  man->FillNtupleDColumn(9,(eventInformation->GetEDep()));
-  }
-
-
-  G4int pmtshits[8];
-
 
   if(pmtHC){
-    G4ThreeVector reconPos(0.,0.,0.);
     G4int pmts=pmtHC->entries();
     //Gather info from all PMTs
     for(G4int i=0;i<pmts;i++){
       eventInformation->IncHitCount((*pmtHC)[i]->GetPhotonCount());
-      if(fVerbose>0){
-        G4cout << "\tPMT " << (*pmtHC)[i]->GetPMTNumber() << ": "
-             << (*pmtHC)[i]->GetPhotonCount() << G4endl;
-      }
-      pmtshits [(*pmtHC)[i]->GetPMTNumber()] = (*pmtHC)[i]->GetPhotonCount();
+
       man->FillNtupleDColumn((*pmtHC)[i]->GetPMTNumber(),((*pmtHC)[i]->GetPhotonCount()));
-      reconPos+=(*pmtHC)[i]->GetPMTPos()*(*pmtHC)[i]->GetPhotonCount();
-      if((*pmtHC)[i]->GetPhotonCount()>=fPMTThreshold){
-        eventInformation->IncPMTSAboveThreshold();
-      }
-      else{//wasnt above the threshold, turn it back off
-        (*pmtHC)[i]->SetDrawit(false);
-      }
     }
-    G4float ans = (G4float)pmtshits [0] / (G4float)pmtshits [1];
-    G4float ans2 = (G4float)pmtshits [2] / (G4float)pmtshits [3];
-    if(fVerbose>0){
-      G4cout << "\tRatio 1:2: " << ans << G4endl;
-      G4cout << "\tRatio 3:4: " << ans2 << G4endl;
-    }
-
-
-
-    if(eventInformation->GetHitCount()>0){//dont bother unless there were hits
-      reconPos/=eventInformation->GetHitCount();
-      if(fVerbose>0){
-        G4cout << "\tReconstructed position of hits in LXe : "
-               << reconPos/mm << G4endl;
-      }
-      eventInformation->SetReconPos(reconPos);
-    }
-    pmtHC->DrawAllHits();
   }
-  man->FillNtupleDColumn(8,(eventInformation->GetHitCount()));
-  man->FillNtupleDColumn(11,(eventInformation->GetPhotonCount_Scint()));
+
   man->AddNtupleRow();
-  if(fVerbose>0){
-    //End of event output. later to be controlled by a verbose level
-    G4cout << "\tNumber of photons that hit PMTs in this event : "
-           << eventInformation->GetHitCount() << G4endl;
-    G4cout << "\tNumber of PMTs above threshold("<<fPMTThreshold<<") : "
-           << eventInformation->GetPMTSAboveThreshold() << G4endl;
-    G4cout << "\tNumber of photons produced by scintillation in this event : "
-           << eventInformation->GetPhotonCount_Scint() << G4endl;
-    G4cout << "\tNumber of photons produced by cerenkov in this event : "
-           << eventInformation->GetPhotonCount_Ceren() << G4endl;
-    G4cout << "\tNumber of photons absorbed (OpAbsorption) in this event : "
-           << eventInformation->GetAbsorptionCount() << G4endl;
-    G4cout << "\tNumber of photons absorbed at boundaries (OpBoundary) in "
-           << "this event : " << eventInformation->GetBoundaryAbsorptionCount()
-           << G4endl;
-    G4cout << "Unacounted for photons in this event : "
-           << (eventInformation->GetPhotonCount_Scint() +
-               eventInformation->GetPhotonCount_Ceren() -
-               eventInformation->GetAbsorptionCount() -
-               eventInformation->GetHitCount() -
-               eventInformation->GetBoundaryAbsorptionCount())
-           << G4endl;
-  }
+
   //If we have set the flag to save 'special' events, save here
   if(fSaveThreshold&&eventInformation->GetPhotonCount() <= fSaveThreshold)
     G4RunManager::GetRunManager()->rndmSaveThisEvent();

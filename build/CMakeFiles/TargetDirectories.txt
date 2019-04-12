@@ -1,0 +1,4 @@
+C:/Users/chris/Documents/Documents/Physics/Fourth Year/Porject/Results - Full/imperfect/Simulation/build/CMakeFiles/LXe.dir
+C:/Users/chris/Documents/Documents/Physics/Fourth Year/Porject/Results - Full/imperfect/Simulation/build/CMakeFiles/INSTALL.dir
+C:/Users/chris/Documents/Documents/Physics/Fourth Year/Porject/Results - Full/imperfect/Simulation/build/CMakeFiles/ALL_BUILD.dir
+C:/Users/chris/Documents/Documents/Physics/Fourth Year/Porject/Results - Full/imperfect/Simulation/build/CMakeFiles/ZERO_CHECK.dir

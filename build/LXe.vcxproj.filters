@@ -1,0 +1,192 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClCompile Include="C:\Users\chris\Documents\Documents\Physics\Fourth Year\Porject\Results - Full\imperfect\Simulation\LXe.cc">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\chris\Documents\Documents\Physics\Fourth Year\Porject\Results - Full\imperfect\Simulation\src\LXeActionInitialization.cc">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\chris\Documents\Documents\Physics\Fourth Year\Porject\Results - Full\imperfect\Simulation\src\LXeDetectorConstruction.cc">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\chris\Documents\Documents\Physics\Fourth Year\Porject\Results - Full\imperfect\Simulation\src\LXeDetectorMessenger.cc">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\chris\Documents\Documents\Physics\Fourth Year\Porject\Results - Full\imperfect\Simulation\src\LXeEMPhysics.cc">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\chris\Documents\Documents\Physics\Fourth Year\Porject\Results - Full\imperfect\Simulation\src\LXeEventAction.cc">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\chris\Documents\Documents\Physics\Fourth Year\Porject\Results - Full\imperfect\Simulation\src\LXeEventMessenger.cc">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\chris\Documents\Documents\Physics\Fourth Year\Porject\Results - Full\imperfect\Simulation\src\LXeGeneralPhysics.cc">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\chris\Documents\Documents\Physics\Fourth Year\Porject\Results - Full\imperfect\Simulation\src\LXeMainVolume.cc">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\chris\Documents\Documents\Physics\Fourth Year\Porject\Results - Full\imperfect\Simulation\src\LXeMuonPhysics.cc">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\chris\Documents\Documents\Physics\Fourth Year\Porject\Results - Full\imperfect\Simulation\src\LXePMTHit.cc">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\chris\Documents\Documents\Physics\Fourth Year\Porject\Results - Full\imperfect\Simulation\src\LXePMTSD.cc">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\chris\Documents\Documents\Physics\Fourth Year\Porject\Results - Full\imperfect\Simulation\src\LXePhysicsList.cc">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\chris\Documents\Documents\Physics\Fourth Year\Porject\Results - Full\imperfect\Simulation\src\LXePrimaryGeneratorAction.cc">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\chris\Documents\Documents\Physics\Fourth Year\Porject\Results - Full\imperfect\Simulation\src\LXeRunAction.cc">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\chris\Documents\Documents\Physics\Fourth Year\Porject\Results - Full\imperfect\Simulation\src\LXeRunMessenger.cc">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\chris\Documents\Documents\Physics\Fourth Year\Porject\Results - Full\imperfect\Simulation\src\LXeScintHit.cc">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\chris\Documents\Documents\Physics\Fourth Year\Porject\Results - Full\imperfect\Simulation\src\LXeScintSD.cc">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\chris\Documents\Documents\Physics\Fourth Year\Porject\Results - Full\imperfect\Simulation\src\LXeStackingAction.cc">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\chris\Documents\Documents\Physics\Fourth Year\Porject\Results - Full\imperfect\Simulation\src\LXeSteppingAction.cc">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\chris\Documents\Documents\Physics\Fourth Year\Porject\Results - Full\imperfect\Simulation\src\LXeSteppingMessenger.cc">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\chris\Documents\Documents\Physics\Fourth Year\Porject\Results - Full\imperfect\Simulation\src\LXeSteppingVerbose.cc">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\chris\Documents\Documents\Physics\Fourth Year\Porject\Results - Full\imperfect\Simulation\src\LXeTrackingAction.cc">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\chris\Documents\Documents\Physics\Fourth Year\Porject\Results - Full\imperfect\Simulation\src\LXeTrajectory.cc">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\chris\Documents\Documents\Physics\Fourth Year\Porject\Results - Full\imperfect\Simulation\src\LXeUserEventInformation.cc">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\chris\Documents\Documents\Physics\Fourth Year\Porject\Results - Full\imperfect\Simulation\src\LXeUserTrackInformation.cc">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\chris\Documents\Documents\Physics\Fourth Year\Porject\Results - Full\imperfect\Simulation\src\LXeWLSFiber.cc">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\chris\Documents\Documents\Physics\Fourth Year\Porject\Results - Full\imperfect\Simulation\src\LXeWLSSlab.cc">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="C:\Users\chris\Documents\Documents\Physics\Fourth Year\Porject\Results - Full\imperfect\Simulation\include\LXeActionInitialization.hh">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\chris\Documents\Documents\Physics\Fourth Year\Porject\Results - Full\imperfect\Simulation\include\LXeAnalysis.hh">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\chris\Documents\Documents\Physics\Fourth Year\Porject\Results - Full\imperfect\Simulation\include\LXeDetectorConstruction.hh">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\chris\Documents\Documents\Physics\Fourth Year\Porject\Results - Full\imperfect\Simulation\include\LXeDetectorMessenger.hh">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\chris\Documents\Documents\Physics\Fourth Year\Porject\Results - Full\imperfect\Simulation\include\LXeEMPhysics.hh">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\chris\Documents\Documents\Physics\Fourth Year\Porject\Results - Full\imperfect\Simulation\include\LXeEventAction.hh">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\chris\Documents\Documents\Physics\Fourth Year\Porject\Results - Full\imperfect\Simulation\include\LXeEventMessenger.hh">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\chris\Documents\Documents\Physics\Fourth Year\Porject\Results - Full\imperfect\Simulation\include\LXeGeneralPhysics.hh">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\chris\Documents\Documents\Physics\Fourth Year\Porject\Results - Full\imperfect\Simulation\include\LXeMainVolume.hh">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\chris\Documents\Documents\Physics\Fourth Year\Porject\Results - Full\imperfect\Simulation\include\LXeMuonPhysics.hh">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\chris\Documents\Documents\Physics\Fourth Year\Porject\Results - Full\imperfect\Simulation\include\LXePMTHit.hh">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\chris\Documents\Documents\Physics\Fourth Year\Porject\Results - Full\imperfect\Simulation\include\LXePMTSD.hh">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\chris\Documents\Documents\Physics\Fourth Year\Porject\Results - Full\imperfect\Simulation\include\LXePhysicsList.hh">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\chris\Documents\Documents\Physics\Fourth Year\Porject\Results - Full\imperfect\Simulation\include\LXePrimaryGeneratorAction.hh">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\chris\Documents\Documents\Physics\Fourth Year\Porject\Results - Full\imperfect\Simulation\include\LXeRecorderBase.hh">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\chris\Documents\Documents\Physics\Fourth Year\Porject\Results - Full\imperfect\Simulation\include\LXeRunAction.hh">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\chris\Documents\Documents\Physics\Fourth Year\Porject\Results - Full\imperfect\Simulation\include\LXeRunMessenger.hh">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\chris\Documents\Documents\Physics\Fourth Year\Porject\Results - Full\imperfect\Simulation\include\LXeScintHit.hh">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\chris\Documents\Documents\Physics\Fourth Year\Porject\Results - Full\imperfect\Simulation\include\LXeScintSD.hh">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\chris\Documents\Documents\Physics\Fourth Year\Porject\Results - Full\imperfect\Simulation\include\LXeStackingAction.hh">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\chris\Documents\Documents\Physics\Fourth Year\Porject\Results - Full\imperfect\Simulation\include\LXeSteppingAction.hh">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\chris\Documents\Documents\Physics\Fourth Year\Porject\Results - Full\imperfect\Simulation\include\LXeSteppingMessenger.hh">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\chris\Documents\Documents\Physics\Fourth Year\Porject\Results - Full\imperfect\Simulation\include\LXeSteppingVerbose.hh">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\chris\Documents\Documents\Physics\Fourth Year\Porject\Results - Full\imperfect\Simulation\include\LXeTrackingAction.hh">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\chris\Documents\Documents\Physics\Fourth Year\Porject\Results - Full\imperfect\Simulation\include\LXeTrajectory.hh">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\chris\Documents\Documents\Physics\Fourth Year\Porject\Results - Full\imperfect\Simulation\include\LXeUserEventInformation.hh">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\chris\Documents\Documents\Physics\Fourth Year\Porject\Results - Full\imperfect\Simulation\include\LXeUserTrackInformation.hh">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\chris\Documents\Documents\Physics\Fourth Year\Porject\Results - Full\imperfect\Simulation\include\LXeWLSFiber.hh">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\chris\Documents\Documents\Physics\Fourth Year\Porject\Results - Full\imperfect\Simulation\include\LXeWLSSlab.hh">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\chris\Documents\Documents\Physics\Fourth Year\Porject\Results - Full\imperfect\Simulation\include\g4cvs.hh">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="C:\Users\chris\Documents\Documents\Physics\Fourth Year\Porject\Results - Full\imperfect\Simulation\CMakeLists.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{DF21B8E9-5059-39CE-9522-0DE1C425D083}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{E492FE1B-646A-3C33-9EFC-AE4B98BDBFAF}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>

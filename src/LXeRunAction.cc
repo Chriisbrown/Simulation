@@ -70,10 +70,6 @@ void LXeRunAction::BeginOfRunAction(const G4Run* aRun){
   man->CreateNtupleDColumn("PMT6");
   man->CreateNtupleDColumn("PMT7");
   man->CreateNtupleDColumn("PMT8");
-  man->CreateNtupleDColumn("PMTTotal");
-  man->CreateNtupleDColumn("EnergyDep");
-  man->CreateNtupleDColumn("EventID");
-  man->CreateNtupleDColumn("ScintillationPhotons");
   man->FinishNtuple();
 }
 //....oooOO0OOooo........oooOO0OOooo........oooOO0OOooo........oooOO0OOooo......

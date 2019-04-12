@@ -169,7 +169,7 @@ void LXeSteppingAction::UserSteppingAction(const G4Step * theStep){
                 << "No reallocation step after reflection!"
                 << G4endl;
           G4Exception("LXeSteppingAction::UserSteppingAction()", "LXeExpl01",
-          FatalException,ed,
+          JustWarning,ed,
           "Something is wrong with the surface normal or geometry");
         }
       }
