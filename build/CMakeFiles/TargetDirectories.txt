@@ -1,4 +1,7 @@
-C:/Users/chris/Documents/Documents/Physics/Fourth Year/Porject/Results - Full/imperfect/Simulation/build/CMakeFiles/LXe.dir
-C:/Users/chris/Documents/Documents/Physics/Fourth Year/Porject/Results - Full/imperfect/Simulation/build/CMakeFiles/INSTALL.dir
-C:/Users/chris/Documents/Documents/Physics/Fourth Year/Porject/Results - Full/imperfect/Simulation/build/CMakeFiles/ALL_BUILD.dir
-C:/Users/chris/Documents/Documents/Physics/Fourth Year/Porject/Results - Full/imperfect/Simulation/build/CMakeFiles/ZERO_CHECK.dir
+/home/cb719/Documents/GEANT4/Programs/Simulation/build/CMakeFiles/install/strip.dir
+/home/cb719/Documents/GEANT4/Programs/Simulation/build/CMakeFiles/install/local.dir
+/home/cb719/Documents/GEANT4/Programs/Simulation/build/CMakeFiles/edit_cache.dir
+/home/cb719/Documents/GEANT4/Programs/Simulation/build/CMakeFiles/LXe.dir
+/home/cb719/Documents/GEANT4/Programs/Simulation/build/CMakeFiles/rebuild_cache.dir
+/home/cb719/Documents/GEANT4/Programs/Simulation/build/CMakeFiles/list_install_components.dir
+/home/cb719/Documents/GEANT4/Programs/Simulation/build/CMakeFiles/install.dir
